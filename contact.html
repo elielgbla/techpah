@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | TechPath</title>
+<meta name="description" content="Contactez TechPath : question, proposition de module, signalement d'erreur ou collaboration.">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="assets/css/tailwind.build.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+</head>
+<body data-root="" data-active="contact">
+
+<div id="site-nav"></div>
+
+<header class="page-head">
+  <div class="container">
+    <h1>Contact</h1>
+    <p class="lead mb-0">Une question, une idée de module, une erreur à signaler ? Écrivez-nous.</p>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container"><div class="row g-5">
+
+    <div class="col-lg-5">
+      <h2 class="h4 mb-4">Nous joindre</h2>
+      <div class="contact-line"><i class="bi bi-envelope"></i><div><b>E-mail</b><br><a id="mail-link" href="mailto:elielgbla@gmail.com">elielgbla@gmail.com</a></div></div>
+      <div class="contact-line"><i class="bi bi-whatsapp"></i><div><b>WhatsApp</b><br>+225 07 67 79 56 02</div></div>
+      <div class="contact-line"><i class="bi bi-geo-alt"></i><div><b>Localisation</b><br>Abidjan, Côte d'Ivoire</div></div>
+      <div class="contact-line"><i class="bi bi-clock"></i><div><b>Délai de réponse</b><br>En général sous 48 heures.</div></div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="card-tp tw-shadow-lg">
+        <form id="form" class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="nom">Nom</label>
+              <input class="form-control" id="nom" required>
+              <div class="invalid-feedback">Indiquez votre nom.</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="email">Adresse e-mail</label>
+              <input class="form-control" id="email" type="email" required>
+              <div class="invalid-feedback">Indiquez une adresse e-mail valide.</div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="sujet">Sujet</label>
+              <select class="form-select" id="sujet" required>
+                <option value="Question">Poser une question</option>
+                <option value="Proposition de module">Proposer un module</option>
+                <option value="Signalement d'erreur">Signaler une erreur</option>
+                <option value="Collaboration">Collaboration</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-control" id="message" rows="6" minlength="10" required></textarea>
+              <div class="invalid-feedback">Écrivez un message d'au moins 10 caractères.</div>
+            </div>
+            <div class="col-12 d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-orange" id="send-mail"><i class="bi bi-envelope me-1"></i>Envoyer par e-mail</button>
+              <button type="button" class="btn btn-outline-primary" id="send-wa"><i class="bi bi-whatsapp me-1"></i>Envoyer par WhatsApp</button>
+            </div>
+            <div class="col-12"><small class="text-secondary">Le message s'ouvre dans votre application de messagerie ou dans WhatsApp, prêt à être envoyé. Rien n'est enregistré sur ce site.</small></div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div></div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>

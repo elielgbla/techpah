@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modules : TechPath</title>
+<meta name="description" content="Catalogue des modules d'informatique, filtrables par domaine et par niveau.">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="assets/css/tailwind.build.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+</head><body>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-tp fixed-top"><div class="container">
+<a class="navbar-brand brand-mark" href="index.html">Tech<span>Path</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu"><span class="navbar-toggler-icon"></span></button>
+<div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+<li class="nav-item"><a class="nav-link NAV1" href="index.html">Accueil</a></li>
+<li class="nav-item"><a class="nav-link active" href="modules.html">Modules</a></li>
+<li class="nav-item"><a class="nav-link" href="a-propos.html">À propos</a></li>
+<li class="nav-item"><a class="btn btn-orange btn-sm ms-lg-2" href="contact.html">Nous contacter</a></li>
+</ul></div></div></nav>
+<header class="page-head"><div class="container"><h1>Catalogue des modules</h1><p class="lead mb-0">Choisissez un domaine, un niveau, ou cherchez un mot-clé. Chaque carte ouvre la fiche détaillée du module.</p></div></header>
+<main class="section"><div class="container">
+<div class="row g-3 align-items-end mb-4">
+<div class="col-md-5"><label class="form-label" for="q">Rechercher</label><input id="q" class="form-control" type="search" placeholder="Ex. : VLAN, Laravel, SQL"></div>
+<div class="col-md-3"><label class="form-label" for="domaine">Domaine</label><select id="domaine" class="form-select"><option value="">Tous les domaines</option></select></div>
+<div class="col-md-4"><div class="btn-group w-100" role="group" aria-label="Niveau">
+<button type="button" class="btn btn-outline-primary active" data-level="">Tous</button>
+<button type="button" class="btn btn-outline-primary" data-level="debutant">Débutant</button>
+<button type="button" class="btn btn-outline-primary" data-level="intermediaire">Intermédiaire</button>
+<button type="button" class="btn btn-outline-primary" data-level="expert">Expert</button></div></div></div>
+<p class="text-secondary" id="count" aria-live="polite"></p>
+<div class="row g-4" id="grid"></div>
+<div id="empty" class="d-none text-center py-5"><h2 class="h4">Aucun module ne correspond</h2><p class="text-secondary">Essayez un autre mot-clé, ou proposez ce module depuis la page Contact.</p><a class="btn btn-orange" href="contact.html">Proposer un module</a></div>
+</div></main>
+<footer class="site-footer"><div class="container"><div class="row g-4">
+<div class="col-lg-5"><div class="brand-mark h4">Tech<span>Path</span></div><p>Des modules d&#39;informatique clairs, du premier pas jusqu&#39;à l&#39;expertise, pour apprendre à son rythme.</p></div>
+<div class="col-6 col-lg-3"><h3 class="h6 text-white">Explorer</h3><ul class="list-unstyled"><li><a href="modules.html">Tous les modules</a></li><li><a href="modules.html?domaine=reseaux">Réseaux</a></li><li><a href="modules.html?domaine=developpement-web">Développement web</a></li><li><a href="modules.html?domaine=securite-informatique">Sécurité</a></li></ul></div>
+<div class="col-6 col-lg-4"><h3 class="h6 text-white">Le site</h3><ul class="list-unstyled"><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
+</div><hr class="border-secondary"><small>© <span id="year"></span> TechPath. Tous droits réservés.</small></div></footer>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/modules.js"></script>
+</body></html>

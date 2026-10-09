@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Réseaux : modules | TechPath</title>
+<meta name="description" content="Modules réseaux : modèle OSI et TCP/IP, adressage IP et sous-réseaux, routage et commutation, VPN et WAN.">
+<link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/css/vendor/bootstrap-icons/bootstrap-icons.min.css">
+<link rel="stylesheet" href="../assets/css/tailwind.build.css">
+<link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body data-root="../" data-active="modules" data-bs-spy="scroll" data-bs-target="#toc" data-bs-root-margin="0px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+
+<div id="site-nav"></div>
+
+<header class="page-head">
+  <div class="container">
+    <p class="mb-2"><a class="text-white-50" href="../modules.html">Modules</a> / Réseaux</p>
+    <h1>Réseaux</h1>
+    <p class="lead mb-0">De la compréhension d'un paquet à la conception d'une infrastructure d'entreprise : quatre modules pour devenir autonome sur les réseaux.</p>
+  </div>
+</header>
+
+<main class="section">
+<div class="container"><div class="row g-5">
+
+  <aside class="col-lg-3 d-none d-lg-block">
+    <nav id="toc" class="toc list-group" aria-label="Sommaire du domaine">
+      <a class="list-group-item list-group-item-action" href="#osi-tcpip">Modèle OSI et TCP/IP</a>
+      <a class="list-group-item list-group-item-action" href="#adressage-ip">Adressage IP et sous-réseaux</a>
+      <a class="list-group-item list-group-item-action" href="#routage-commutation">Routage et commutation</a>
+      <a class="list-group-item list-group-item-action" href="#vpn-wan">VPN, WAN et haute disponibilité</a>
+    </nav>
+  </aside>
+
+  <div class="col-lg-9">
+
+  <!-- MODULE 1 -->
+  <article class="module" id="osi-tcpip">
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-2"><span class="lvl lvl-debutant">Débutant</span><span class="meta">Durée estimée : 6 h</span></div>
+    <h2>Modèle OSI et TCP/IP</h2>
+    <p class="lead text-secondary">Comprendre comment une donnée voyage d'un poste à un autre, et savoir dans quelle couche chercher quand quelque chose ne marche pas.</p>
+
+    <h3>Objectifs</h3>
+    <ul>
+      <li>Décrire les 7 couches du modèle OSI et les 4 couches de TCP/IP.</li>
+      <li>Expliquer l'encapsulation d'un message, de l'application jusqu'au câble.</li>
+      <li>Associer un protocole courant à sa couche.</li>
+    </ul>
+
+    <h3>Prérequis</h3>
+    <p>Aucun. Savoir utiliser un ordinateur et un navigateur suffit.</p>
+
+    <h3>Ce qu'il faut savoir</h3>
+    <ul>
+      <li><b>OSI :</b> physique, liaison de données, réseau, transport, session, présentation, application.</li>
+      <li><b>TCP/IP :</b> accès réseau, internet, transport, application.</li>
+      <li><b>Encapsulation :</b> données, puis segment (transport), paquet (réseau), trame (liaison), bits (physique).</li>
+      <li><b>Les trois adresses :</b> MAC (liaison, locale), IP (réseau, logique), port (transport, identifie le service).</li>
+      <li><b>Protocoles clés :</b> Ethernet, ARP, IP, ICMP, TCP, UDP, DNS, DHCP, HTTP/HTTPS.</li>
+      <li><b>TCP et UDP :</b> TCP établit une connexion (poignée de main en trois temps) et garantit la livraison ; UDP est plus léger, sans garantie.</li>
+    </ul>
+
+    <h3>Outils et technologies</h3>
+    <p>Wireshark (capture de trames), <code>ping</code>, <code>tracert</code> (Windows) ou <code>traceroute</code> (Linux), Cisco Packet Tracer.</p>
+
+    <h3>Compétences à valider</h3>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="o1"><label class="form-check-label" for="o1">Je cite les couches OSI dans l'ordre et leur rôle.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="o2"><label class="form-check-label" for="o2">Je distingue adresse MAC, adresse IP et port.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="o3"><label class="form-check-label" for="o3">Je sais quand un service utilise TCP ou UDP.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="o4"><label class="form-check-label" for="o4">Je lis une capture Wireshark simple.</label></div>
+
+    <h3>Mini-projet</h3>
+    <p>Capturez avec Wireshark l'ouverture d'une page web. Repérez la requête DNS, la poignée de main TCP, puis la requête HTTP. Annotez chaque trame avec sa couche et rédigez une page de synthèse.</p>
+
+    <h3>Erreurs fréquentes</h3>
+    <ul>
+      <li>Croire que OSI et TCP/IP se superposent exactement : OSI est un modèle théorique, TCP/IP est ce qui est réellement utilisé.</li>
+      <li>Confondre adresse MAC et adresse IP.</li>
+      <li>Penser qu'un <code>ping</code> réussi prouve que le service applicatif fonctionne.</li>
+    </ul>
+  </article>
+
+  <!-- MODULE 2 -->
+  <article class="module" id="adressage-ip">
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-2"><span class="lvl lvl-debutant">Débutant</span><span class="meta">Durée estimée : 8 h</span></div>
+    <h2>Adressage IP et sous-réseaux</h2>
+    <p class="lead text-secondary">Calculer, découper et planifier des réseaux IPv4 sans erreur, puis découvrir les bases d'IPv6.</p>
+
+    <h3>Objectifs</h3>
+    <ul>
+      <li>Convertir une adresse IPv4 entre décimal et binaire.</li>
+      <li>Calculer adresse réseau, broadcast et plage d'hôtes à partir d'un masque.</li>
+      <li>Concevoir un plan d'adressage avec VLSM.</li>
+    </ul>
+
+    <h3>Prérequis</h3>
+    <p>Le module « Modèle OSI et TCP/IP » est conseillé.</p>
+
+    <h3>Ce qu'il faut savoir</h3>
+    <ul>
+      <li>Une adresse IPv4 fait 32 bits, écrite en quatre octets (ex. 192.168.10.25).</li>
+      <li>Notation CIDR : <code>/24</code> équivaut à <code>255.255.255.0</code>. Nombre d'hôtes utilisables : 2<sup>n</sup> − 2, où n est le nombre de bits d'hôte.</li>
+      <li>Adresses privées : 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16.</li>
+      <li>Passerelle par défaut, DHCP, DNS, NAT/PAT.</li>
+      <li><b>Exemple :</b> 192.168.10.0/24 découpé en quatre /26 donne les réseaux 192.168.10.0, .64, .128 et .192, avec 62 hôtes utilisables chacun.</li>
+      <li><b>VLSM :</b> attribuer à chaque sous-réseau la taille juste nécessaire, en commençant par le plus grand.</li>
+      <li><b>IPv6 :</b> 128 bits, notation hexadécimale, préfixe /64 pour un réseau local.</li>
+    </ul>
+
+    <h3>Outils et technologies</h3>
+    <p>Calculatrice binaire, <code>ipcalc</code> ou calculateurs en ligne, <code>ipconfig</code> (Windows), <code>ip a</code> (Linux), Packet Tracer.</p>
+
+    <h3>Compétences à valider</h3>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="a1"><label class="form-check-label" for="a1">Je convertis une adresse en binaire sans calculatrice.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="a2"><label class="form-check-label" for="a2">Je trouve réseau, broadcast et plage utilisable d'un /27.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="a3"><label class="form-check-label" for="a3">Je découpe un réseau en sous-réseaux de tailles différentes.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="a4"><label class="form-check-label" for="a4">Je diagnostique une mauvaise configuration IP sur un poste.</label></div>
+
+    <h3>Mini-projet</h3>
+    <p>Une PME a besoin de quatre réseaux : Technique (50 postes), Invités (100), Comptabilité (25) et Direction (10), à partir de 192.168.20.0/24. Proposez un plan en VLSM : un /25 pour les invités, un /26 pour la technique, un /27 pour la comptabilité et un /28 pour la direction. Indiquez pour chaque réseau l'adresse, le masque, la plage utilisable et la passerelle.</p>
+
+    <h3>Erreurs fréquentes</h3>
+    <ul>
+      <li>Oublier que l'adresse réseau et le broadcast ne sont pas utilisables par des hôtes.</li>
+      <li>Créer des sous-réseaux qui se chevauchent.</li>
+      <li>Placer la passerelle en dehors du sous-réseau.</li>
+    </ul>
+  </article>
+
+  <!-- MODULE 3 -->
+  <article class="module" id="routage-commutation">
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-2"><span class="lvl lvl-intermediaire">Intermédiaire</span><span class="meta">Durée estimée : 14 h</span></div>
+    <h2>Routage et commutation</h2>
+    <p class="lead text-secondary">Configurer des commutateurs et des routeurs pour segmenter un réseau d'entreprise et faire communiquer ses parties.</p>
+
+    <h3>Objectifs</h3>
+    <ul>
+      <li>Créer et configurer des VLAN, des ports access et des trunks.</li>
+      <li>Mettre en place le routage inter-VLAN.</li>
+      <li>Configurer le routage statique et OSPF.</li>
+    </ul>
+
+    <h3>Prérequis</h3>
+    <p>Modèle OSI et TCP/IP, adressage IP et sous-réseaux.</p>
+
+    <h3>Ce qu'il faut savoir</h3>
+    <ul>
+      <li>Fonctionnement d'un commutateur : apprentissage de la table d'adresses MAC.</li>
+      <li>VLAN 802.1Q, ports access et trunk, VLAN natif.</li>
+      <li>Routage inter-VLAN : « router-on-a-stick » ou commutateur de niveau 3.</li>
+      <li>STP : éviter les boucles de couche 2.</li>
+      <li>Routage statique, route par défaut, puis OSPF (voisins, aires, coût).</li>
+      <li>ACL de base, NAT/PAT.</li>
+    </ul>
+    <pre class="code"><code>Switch(config)# vlan 10
+Switch(config-vlan)# name COMPTA
+Switch(config)# interface fa0/1
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 10
+Switch(config)# interface gi0/1
+Switch(config-if)# switchport mode trunk
+
+Router(config)# router ospf 1
+Router(config-router)# network 192.168.10.0 0.0.0.255 area 0</code></pre>
+
+    <h3>Outils et technologies</h3>
+    <p>Cisco Packet Tracer, GNS3, Cisco IOS, MikroTik RouterOS (Winbox). Commandes de contrôle : <code>show vlan brief</code>, <code>show ip route</code>, <code>show ip ospf neighbor</code>.</p>
+
+    <h3>Compétences à valider</h3>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="r1"><label class="form-check-label" for="r1">Je configure trois VLAN et un trunk sans aide.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="r2"><label class="form-check-label" for="r2">Je fais communiquer deux VLAN via un routeur.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="r3"><label class="form-check-label" for="r3">Je configure OSPF entre deux routeurs et vérifie les voisins.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="r4"><label class="form-check-label" for="r4">Je lis une table de routage et trouve une route manquante.</label></div>
+
+    <h3>Mini-projet</h3>
+    <p>Deux sites reliés par un lien routeur à routeur. Chaque site a trois VLAN (Direction, Technique, Invités). Configurez le routage inter-VLAN sur chaque site, OSPF entre les sites, et une ACL qui interdit au VLAN Invités d'accéder au VLAN Direction.</p>
+
+    <h3>Erreurs fréquentes</h3>
+    <ul>
+      <li>Oublier d'autoriser un VLAN sur le trunk, ou avoir des VLAN natifs différents aux deux extrémités.</li>
+      <li>Oublier <code>no shutdown</code> sur une interface de routeur.</li>
+      <li>Confondre masque et masque générique (wildcard) dans la commande <code>network</code> d'OSPF.</li>
+    </ul>
+  </article>
+
+  <!-- MODULE 4 -->
+  <article class="module" id="vpn-wan">
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-2"><span class="lvl lvl-expert">Expert</span><span class="meta">Durée estimée : 16 h</span></div>
+    <h2>VPN, WAN et haute disponibilité</h2>
+    <p class="lead text-secondary">Relier des sites distants de façon sécurisée et faire en sorte que le réseau reste disponible même en cas de panne.</p>
+
+    <h3>Objectifs</h3>
+    <ul>
+      <li>Monter un VPN site-à-site IPsec et un VPN d'accès distant.</li>
+      <li>Concevoir une redondance de passerelle et de liens.</li>
+      <li>Superviser un réseau avec SNMP.</li>
+    </ul>
+
+    <h3>Prérequis</h3>
+    <p>Routage et commutation. Notions de chiffrement conseillées.</p>
+
+    <h3>Ce qu'il faut savoir</h3>
+    <ul>
+      <li><b>IPsec :</b> IKE phase 1 et phase 2, ESP, politiques de chiffrement et d'authentification.</li>
+      <li><b>VPN d'accès distant :</b> OpenVPN et WireGuard.</li>
+      <li><b>WAN :</b> tunnels GRE, notions de MPLS, bases de BGP (système autonome, eBGP/iBGP).</li>
+      <li><b>Haute disponibilité :</b> HSRP/VRRP, agrégation de liens LACP, STP rapide.</li>
+      <li><b>Supervision :</b> SNMP, journaux, alertes ; QoS pour prioriser la voix et les applications métier.</li>
+    </ul>
+
+    <h3>Outils et technologies</h3>
+    <p>GNS3 ou EVE-NG, routeurs Cisco ou MikroTik, pfSense, OpenVPN, WireGuard, Zabbix.</p>
+
+    <h3>Compétences à valider</h3>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="v1"><label class="form-check-label" for="v1">Je monte un tunnel IPsec entre deux équipements.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="v2"><label class="form-check-label" for="v2">Je configure une passerelle redondante qui bascule seule.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="v3"><label class="form-check-label" for="v3">Je mets en place une supervision avec alertes.</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" id="v4"><label class="form-check-label" for="v4">Je documente l'architecture et le plan de reprise.</label></div>
+
+    <h3>Mini-projet</h3>
+    <p>Concevez en laboratoire un réseau à deux sites avec un VPN site-à-site, deux liens WAN (principal et secours) et une passerelle redondante. Coupez le lien principal, mesurez le temps de bascule et rédigez un rapport.</p>
+
+    <h3>Erreurs fréquentes</h3>
+    <ul>
+      <li>Des paramètres de chiffrement différents aux deux extrémités du tunnel.</li>
+      <li>Un problème de MTU qui fragmente ou bloque le trafic dans le tunnel.</li>
+      <li>Oublier d'exempter le trafic du VPN de la règle NAT.</li>
+    </ul>
+  </article>
+
+  </div>
+</div></div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="../assets/js/layout.js"></script>
+<script src="../assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
